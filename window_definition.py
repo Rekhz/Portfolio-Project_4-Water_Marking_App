@@ -3,12 +3,13 @@ from matplotlib import font_manager
 from tkinter import ttk
 
 
-
 class ImageWatermarkingApp:
     def __init__(self,window):
         self.window = window
         self.window.title("Image Watermarking App")
+
         self.window.minsize(width=800, height=800)
+
 
         # self.watermarked_image = None
         # self.path = None
@@ -36,8 +37,7 @@ class ImageWatermarkingApp:
         self.image_name_label = Label(self.window, text="Image Name")
         self.image_name_label.grid(row=1, column=0, columnspan=3, padx=10, pady=10, sticky="ew")
 
-        self.canvas = Canvas(self.window, width=600, height=600, border=1, relief=SUNKEN, borderwidth=1, highlightthickness=2,
-                        selectforeground="white")
+        self.canvas = Canvas(self.window, width=600, height=600, )
         self.canvas.grid(row=2, column=0, columnspan=3, rowspan=12, padx=10, pady=10)
 
         self.file_open_label = Label(self.window, text="Upload the Image in which watermark needs to be added", justify="left",
@@ -103,7 +103,7 @@ class ImageWatermarkingApp:
             if not "matplotlib" in f:
                 self.font_combo_list.append((f.split('\\')[-1]).split(".")[0])
 
-        self.font_size_list = ["10", "20", "30", "40", "50", "60", "80", "90"]
+        self.font_size_list = ["10", "20", "30", "40", "50", "60", "80", "90","100","110", "120", "130", "140", "150", "160", "180", "190","200"]
         self.color_combo = ttk.Combobox(self.text_frame, values=self.color_list)
         self.color_combo.set("Pick a Color")
 

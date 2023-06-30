@@ -54,6 +54,7 @@ class WaterMarking:
 
       font = self.app.font_combo.get() + ".ttf"
       font_size = self.app.font_size_combo.get()
+      # print(int(font_size))
       orientation = self.app.orientation_combo.get()
       watermark_line_option = self.app.line_list_combo.get()
       # print(watermark_line_option)
@@ -70,7 +71,6 @@ class WaterMarking:
                dr.text((i, j), text=text_to_be_added, font=ft, fill=fill)
          tim = tim.rotate(int(orientation))
          self.watermarked_image.paste(tim, (0, 0), tim)
-         print(self.watermarked_image,"hhhhhhhhhhhhhhhhhhhh")
 
       elif watermark_line_option == "Single Line - Center of the Image":
 
@@ -80,7 +80,7 @@ class WaterMarking:
          self.watermarked_image.paste(tim, (0, 0), tim)
 
       elif watermark_line_option == "Single Line - Top Left":
-         print("Single line -left")
+         # print("Single line -left")
          if int(orientation) != 0:
             messagebox.showinfo(title="Choose Orientation", message="Please choose orientatios as 0")
          else:
@@ -129,7 +129,8 @@ class WaterMarking:
       if self.choice==1:
          text_to_be_added = self.app.watermark_text_entry.get().title()
 
-         if len(text_to_be_added) == 0 or self.app.color_combo.get() == "Pick a Color" or self.app.font_combo.get() == "Pick a Font" or self.app.font_size_combo.get() == "Pick a Font Size" or self.app.line_list_combo.get()=="Pick a Position for Printing":
+         if len(text_to_be_added) == 0 or self.app.orientation_combo.get()=="Pick a Text Orientation" or self.app.color_combo.get() == "Pick a Color" or self.app.font_combo.get() == "Pick a Font" or self.app.font_size_combo.get() == "Pick a Font Size" or self.app.line_list_combo.get()=="Pick a Position for Printing":
+            print("error")
             messagebox.showinfo(title="Empty", message="Please choose all the fields")
          transparency_value=int(self.app.Scala2.get())
          color_string = self.app.color_combo.get()

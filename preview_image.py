@@ -44,7 +44,7 @@ class PreviewImage:
 #
 
     def save_image(self):
-        print(self.path)
+        # print(self.path)
         x = self.path.split("/")[:-1]
         img_name = self.path.split("/")[-1].split(".")[0]
 
@@ -85,7 +85,7 @@ class PreviewImage:
                 # print(f"Error: 'watermarked_image_{img_name}.jpg' already exists!")
             else:
                 self.watermarked_image.save(final_filepath)
-                print("watermark added")
+                # print("watermark added")
                 messagebox.showinfo(title="Success",
                                     message="Image saved in 'watermarked_images' folder at original location.")
     #
